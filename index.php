@@ -40,6 +40,7 @@
 </head>
 <body>
     <h1>#Tags Finder</h1>
+    <h2>Write a Post and this will extract tags</h2>
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
         <label for="post">Write a Post here.</label>
         <input type="text" name="post" id="post">
