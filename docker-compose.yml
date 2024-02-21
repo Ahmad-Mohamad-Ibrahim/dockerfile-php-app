@@ -1,0 +1,26 @@
+### Compose file, that creates wordpress, and its mysql databases containers
+version: "3.7"
+services:
+  www:
+    container_name: ApacheApp
+    image: php:apache
+    
+    networks:
+     bridge:
+        ipv4_address: 192.168.10.10
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 8888:80
+volumes:
+  myApp:
+    driver: local
+networks:
+  bridge:
+    driver: bridge
+    ipam:
+       config:
+         - subnet: 192.168.10.0/24
+           gateway: 192.168.10.1
+
+
